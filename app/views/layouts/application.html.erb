@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Klaustur Off Road Challenge</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to image_tag("greyBigLogo.jpg", class: "logo"), "/"+I18n.locale.to_s+"/" %>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li><h4><%= link_to((I18n.t "nav.news"), "/"+I18n.locale.to_s+"/news") %></h4></li>
+            <li><h4><%= link_to((I18n.t "nav.info"), "/"+I18n.locale.to_s+"/info") %></h4></li>
+            <li><h4><%= link_to((I18n.t "nav.children"), "/"+I18n.locale.to_s+"/children") %></h4></li>
+            <li><h4><%= link_to((I18n.t "nav.results"), "/results") %></h4></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to image_tag("social/fb.gif", size: "20x20"), "https://www.facebook.com/klausturoffroadchallenge", target: "_blank", class:"sections"%></li>
+            <li><%= link_to image_tag("social/twitter.png", size: "20x20"), "https://www.twitter.com/klausturoffroad", target: "_blank" %></li>
+            <li><%= link_to image_tag("social/instagram.png", size: "20x20"), "https://www.instagram.com/klausturoffroad", target: "_blank" %></li>
+            <li class="lang"><h4><%= I18n.locale.to_s == 'is' ? (link_to "EN", locale: "en") : (link_to "IS", locale: "is") %></h4></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main">
+      <%= yield %>
+    </div>
+    <div id="samstarfsadilar" class="flex-child-column">
+      <h1 class="maker-label flex-item-1"><%= I18n.t "race.sponsors" %></h1>
+      <br>
+      <div class="flex-item-1 flex-child-row makers-line">
+        <div class="flex-item-1 flex-child-column flex-align-center">
+          <%= link_to image_tag("makers/vik.gif", class: "maker"), "http://www.motocross.is", target: "_blank" %>
+        </div>
+        <div class="flex-item-1 flex-child-column flex-align-center">
+            <%= link_to image_tag("makers/msi-hvit.JPG", class: "maker"), "http://www.msisport.is", target: "_blank" %>
+        </div>
+        <div class="flex-item-1 flex-child-column flex-align-center">
+            <%= link_to image_tag("makers/kfc.png", class: "maker"), "http://www.kfc.is", target: "_blank" %>
+        </div>
+        <div class="flex-item-1 flex-child-column flex-align-center">
+            <%= link_to image_tag("makers/snaeland.jpg", class: "maker"), "http://www.snaelandvideo.is", target: "_blank" %>
+        </div>
+        <div class="flex-item-1 flex-child-column flex-align-center">
+            <%= link_to image_tag("makers/systrakaffi.png", class: "maker"), "http://www.systrakaffi.is", target: "_blank" %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

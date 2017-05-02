@@ -1,0 +1,1 @@
+json.array! @laptimes, partial: 'laptimes/laptime', as: :laptime

@@ -1,0 +1,22 @@
+<%= form_for(index_video) do |f| %>
+  <% if index_video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(index_video.errors.count, "error") %> prohibited this index_video from being saved:</h2>
+
+      <ul>
+      <% index_video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :youtube %>
+    <%= f.text_field :youtube %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module LaptimesHelper
+end

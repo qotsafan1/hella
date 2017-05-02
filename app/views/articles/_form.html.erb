@@ -1,0 +1,47 @@
+<%= form_for(article) do |f| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :label_is %>
+    <%= f.text_field :label_is %>
+  </div>
+
+  <div class="field">
+    <%= f.label :label_en %>
+    <%= f.text_field :label_en %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body_is %>
+    <%= f.text_field :body_is %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body_en %>
+    <%= f.text_field :body_en %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :youtube %>
+    <%= f.text_field :youtube %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

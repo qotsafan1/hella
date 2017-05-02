@@ -1,0 +1,78 @@
+<div class="results container">
+  <% if (I18n.locale.to_s == 'is') %>
+    <%= select_tag 'groups', options_for_select(@groups.collect{ |u| [u.name, u.name] }), :prompt => "Allir flokkar", :class => "form-control" %>
+  <% else %>
+    <%= select_tag 'groups', options_for_select(@groups.collect{ |u| [u.name_en, u.name_en] }), :prompt => "Overall", :class => "form-control" %>
+  <% end %>
+  <div class="flex-child-row">
+    <div class="flex-item-1  flex-child-column flex-align-center"><b><%= I18n.t "results.place" %></b></div>
+    <div class="flex-item-5"><b><%= I18n.t "results.participants" %></b></div>
+    <div class="flex-item-4 flex-child-column flex-align-center visible-sm visible-md visible-lg"><b><%= I18n.t "results.group" %></b></div>
+    <div class="flex-item-4 flex-child-column flex-align-center visible-sm visible-md visible-lg"><b><%= I18n.t "results.time" %></b></div>
+    <div class="flex-item-1 flex-child-column flex-align-center visible-sm visible-md visible-lg"><b><%= I18n.t "results.laps" %></b></div>
+  </div>
+
+  <div class="flex-child-column flex-justify-center">
+    <%
+      counter = 1;
+      @competitors.each do |competitor|
+    %>
+      <div class="flex-item-1 flex-child-column competitor" data-result-id="<%= competitor.id %>" data-group="<%= I18n.locale.to_s == 'is' ? competitor.group.name : competitor.group.name_en %>">
+        <div class="flex-item-1 flex-child-row">
+          <div class="flex-item-1 flex-child-column flex-align-center counting-place"><%= counter %></div>
+          <div class="flex-item-5"><%= competitor.name %></div>
+          <div class="flex-item-4 flex-child-column flex-align-center visible-sm visible-md visible-lg"><%= I18n.locale.to_s == 'is' ? competitor.group.name : competitor.group.name_en %></div>
+          <div class="flex-item-4 flex-child-column flex-align-center visible-sm visible-md visible-lg"><%= competitor.total_time.nil? ? '00:00:00' : competitor.total_time.strftime("%H:%M:%S") %></div>
+          <div class="flex-item-1 flex-child-column flex-align-center visible-sm visible-md visible-lg"><%= competitor.laps %></div>
+        </div>
+
+        <div class="flex-item-1 flex-child-row laptimes" style="display:none">
+          <div class="flex-child-column flex-justify-center">
+            <% competitor.laptimes.each do |lap| %>
+            <div class="flex-item-1"><b><%= lap.lap_number %>.</b> <%= lap.laptime %></div>
+            <% end %>
+          </div>
+          <div class="flex-child-column visible-xs flex-justify-center small-results-info">
+            <div class="flex-item-1 "><b><%= I18n.t "results.group" %></b></div>
+            <div class="flex-item-1"><%= I18n.locale.to_s == 'is' ? competitor.group.name : competitor.group.name_en %></div>
+            <div class="flex-item-1"><b><%= I18n.t "results.time" %></b></div>
+            <div class="flex-item-1"><%= competitor.total_time.nil? ? '00:00:00' : competitor.total_time.strftime("%H:%M:%S") %></div>
+            <div class="flex-item-1"><b><%= I18n.t "results.laps" %></b></div>
+            <div class="flex-item-1"><%= competitor.laps %></div>
+
+          </div>
+        </div>
+      </div>
+    <%
+      counter = counter + 1
+      end
+    %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $('.competitor').on('click', function() {
+      var laptimesDiv = $(this).find('.laptimes');
+      if ( laptimesDiv.is(":visible")){
+        laptimesDiv.toggle('fast');
+      } else {
+        laptimesDiv.toggle('fast');
+      }
+    });
+
+    $('#groups').on('change', function() {
+      var selectedValue = $(this).val();
+      var counter = 1;
+      $('.competitor').each(function() {
+        if ($(this).attr('data-group') === selectedValue || selectedValue === '') {
+          $(this).show();
+          $(this).find('.counting-place').text(counter);
+          counter++;
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  });
+</script>

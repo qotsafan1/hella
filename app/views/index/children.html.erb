@@ -1,0 +1,24 @@
+<div class="container children">
+  <h1 class=""><%= I18n.t "children.title" %></h1>
+  <div><%= image_tag "kids.jpg", :class => "img-responsive" %></div>
+</br>
+  <p><%= I18n.locale.to_s == 'is' ? @info.info_is : @info.info_en %></p>
+  <div class="flex-child-row change-on-mobile">
+    <div class="flex-item-1 flex-child-column flex-align-center">
+      <h2><%= I18n.t "children.header.timetable" %></h2>
+      <h3><%= I18n.t "children.timetable.arrival" %></h3>
+      <h3><%= I18n.t "children.timetable.test" %></h3>
+      <h3><%= I18n.t "children.timetable.start" %></h3>
+      <h3><%= I18n.t "children.timetable.finish" %></h3>
+      <h3><%= I18n.t "children.timetable.prizes" %></h3>
+
+      <h2><%= I18n.t "children.header.registration" %></h2>
+    </div>
+    <div class="flex-item-1 flex-child-column flex-align-center">
+      <h2 class="small-gap"><%= I18n.t "children.header.bikes" %></h3>
+      <h3 class="small-gap"><%= I18n.t "children.bikes.two" %></h3>
+      <h3 class="small-gap"><%= I18n.t "children.bikes.four" %></h3>
+      <h2><%= I18n.t "children.header.responsability" %></h2>
+    </div>
+  </div>
+</div>

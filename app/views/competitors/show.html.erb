@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @competitor.name %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @competitor.group %>
+</p>
+
+<p>
+  <strong>Laps:</strong>
+  <%= @competitor.laps %>
+</p>
+
+<p>
+  <strong>Total time:</strong>
+  <%= @competitor.total_time %>
+</p>
+
+<p>
+  <strong>Finish time:</strong>
+  <%= @competitor.finish_time %>
+</p>
+
+<p>
+  <strong>Place in group:</strong>
+  <%= @competitor.place_in_group %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @competitor.year %>
+</p>
+
+<%= link_to 'Edit', edit_competitor_path(@competitor) %> |
+<%= link_to 'Back', competitors_path %>

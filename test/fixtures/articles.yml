@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  label_is: 
+  label_en: 
+  body_is: 
+  body_en: 
+  image: 
+  youtube: MyString
+
+two:
+  label_is: 
+  label_en: 
+  body_is: 
+  body_en: 
+  image: 
+  youtube: MyString

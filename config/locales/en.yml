@@ -1,0 +1,70 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  nav:
+    news: "NEWS"
+    info: "INFO"
+    results: "RESULTS"
+    children: "KIDS"
+  clock:
+    days: "days"
+    hours: "hours"
+    minutes: "minutes"
+    seconds: "seconds"
+  race:
+    starts: "Race starts in"
+    sponsors: "Associates"
+    title: "The race"
+    rules: "Please note"
+  groups:
+    title: "These are the available groups in the event"
+    participants: "participants"
+    participant: "participant"
+    bikes: "bikes"
+    price: "Price for %{prices} place"
+  results:
+    place: "Place"
+    participants: "Participants"
+    group: "Group"
+    time: "Total time"
+    laps: "Laps"
+  children:
+    title: "Kids event"
+    header:
+      group: "Groups (the year applies):"
+      bikes: "Bike sizes"
+      responsability: "All children are parents responsability."
+      timetable: "Timetable:"
+      registration: "Registration on guggi@ernir.is and on site."
+    group:
+      younger: "8-9 years old"
+      older: "10-11 years old"
+      oldest: "12-13 years old"
+    bikes:
+      two: "50 - 125 cc. 2-stroke"
+      four: "50 - 150 cc. 4-stroke"
+    timetable:
+      arrival: "Arrival 9:00"
+      test: "Sighting lap 9:20"
+      start: "Start 10:00"
+      finish: "Finish 10:30"
+      prizes: "Awards"

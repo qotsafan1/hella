@@ -1,0 +1,323 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ $screen-md-min: 900px !default;
+
+ $grid-float-breakpoint: $screen-md-min;
+ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/*!
+* Start Bootstrap - Full Slider HTML Template (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+*/
+
+html,
+body {
+  height: 100%;
+  font-family: 'Lato', 'arial', 'sans-serif';
+}
+
+.flex-child-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-child-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-align-center {
+  align-items: center;
+}
+.flex-align-end {
+  align-items: flex-end;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-align-self-center {
+  align-self: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-item-1 {
+  flex: 1;
+}
+.flex-item-2 {
+  flex: 2;
+}
+.flex-item-3 {
+  flex: 3;
+}
+.flex-item-4 {
+  flex: 4;
+}
+.flex-item-5 {
+  flex: 5;
+}
+.flex-item-6 {
+  flex: 6;
+}
+
+.navbar {
+  background-color: #505050;
+  border-radius: 0px;
+  border-style: none;
+  margin-bottom: 0px;
+
+  .logo {
+    margin-right: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    line-height: 35px;
+  }
+  .navbar-left {
+    a {
+      padding: 5px 5px 5px 5px;
+      margin-right: 10px;
+    }
+  }
+
+  .navbar-right {
+    .lang {
+      padding: 0 5px;
+    }
+  }
+  .navbar-collapse {
+    max-height: 400px;
+  }
+}
+
+.sections
+{
+  color: white;
+  a {
+    color:white;
+  }
+}
+
+.logo
+{
+   max-width:140px;
+   float:left;
+}
+
+hr {
+   max-width: 50px;
+   border-color: red;
+   border-width: 3px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   border-top: 10px solid red;
+   height: 0;
+}
+
+.maker-label
+{
+   color: white;
+}
+
+div.countdown
+{
+   min-height: 300px;
+   padding-top: 80px;
+   color: white;
+}
+
+div#samstarfsadilar
+{
+  h2 {
+    color:white;
+  }
+   background-color: #505050;
+   h1 {
+     padding-left: 10px;
+   }
+}
+
+.maker {
+  max-width: 120px;
+  margin-bottom: 20px;
+  flex:1;
+}
+
+.news {
+  padding-top: 70px;
+  max-width: 950px;
+
+  p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.info {
+  padding-top: 70px;
+
+  .about {
+    p {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    margin-bottom: 50px;
+  }
+
+  .groups {
+    flex-flow: row wrap;
+    .group {
+      padding: 5px;
+      margin: 5px;
+      min-width: 200px;
+      margin-bottom: 5px;
+      p {
+        font-size: 15px;
+      }
+      border: solid 1px red;
+      border-radius: 5px
+
+    }
+    margin-bottom: 50px;
+  }
+}
+
+.results {
+  padding: 70px 20px 40px 20px;
+}
+
+#registrationClock {
+  color:white;
+  margin-bottom: 10vh;
+  h1 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid red;
+  }
+  h4 {
+    padding-top: 20px;
+  }
+  .clock {
+    min-width: 200px;
+  }
+}
+
+.accurate-date {
+  h2 {
+    font-size: 100px;
+  }
+  margin-bottom: 25vh;
+}
+
+.background-home {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: auto;
+  padding-top: 60px;
+
+  h2 {
+    color: white;
+  }
+}
+
+.main {
+  min-height: 100vh;
+}
+
+.competitor {
+  font-size: 18px;
+  background-color: #505050;
+  color: white;
+  margin: 0.5px;
+  padding: 5px;
+  cursor: pointer;
+  cursor: hand;
+  .laptimes {
+    background-color: white;
+    color: black;
+    padding: 5px 5px 5px 50px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.video-container {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.article {
+  margin-bottom: 20px;
+}
+
+.small-results-info {
+  padding-left: 15px;
+}
+
+.children {
+  padding-top: 60px;
+
+  p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  h2 {
+    color: red;
+  }
+
+  .small-gap {
+    margin-bottom: 1px;
+
+  }
+}
+
+@media (max-width 767px) {
+  div#samstarfsadilar {
+    .makers-line {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width:650px) {
+  div#samstarfsadilar {
+    .makers-line {
+      flex-direction: column;
+    }
+  }
+  .change-on-mobile {
+    flex-direction: column;
+  }
+  .accurate-date {
+    h2 {
+      font-size: 50px;
+    }
+  }
+}

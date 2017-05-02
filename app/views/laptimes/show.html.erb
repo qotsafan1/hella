@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Competitor:</strong>
+  <%= @laptime.competitor %>
+</p>
+
+<p>
+  <strong>Lap number:</strong>
+  <%= @laptime.lap_number %>
+</p>
+
+<p>
+  <strong>Laptime:</strong>
+  <%= @laptime.laptime %>
+</p>
+
+<%= link_to 'Edit', edit_laptime_path(@laptime) %> |
+<%= link_to 'Back', laptimes_path %>

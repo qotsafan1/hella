@@ -1,0 +1,26 @@
+<div class="container news">
+  <div class="flex-child-column">
+      <div class="flex-item-1 flex-child-column">
+        <div class="flex-item-1 article">
+          <h2 class="flex-item-1">
+            <%= I18n.locale.to_s == 'is' ? @article.label_is : @article.label_en %>
+          </h2>
+          <p style="white-space: pre-wrap;"><%= I18n.locale.to_s == 'is' ? @article.body_is.html_safe : @article.body_en.html_safe %></p>
+        </div>
+        <% if (@article.image?) %>
+        <div class="flex-item-1 article">
+          <div class="flex-child-column flex-align-center">
+            <img src="<%= @article.image %>" alt="" class="img-responsive">
+          </div>
+        </div>
+        <% end %>
+        <% if (@article.youtube?) %>
+        <div class="flex-item-1 article">
+          <div class="flex-child-column flex-align-center embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="<%= @article.youtube %>"></iframe>
+          </div>
+        </div>
+        <% end %>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Laptimes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Competitor</th>
+      <th>Lap number</th>
+      <th>Laptime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laptimes.each do |laptime| %>
+      <tr>
+        <td><%= laptime.competitor %></td>
+        <td><%= laptime.lap_number %></td>
+        <td><%= laptime.laptime %></td>
+        <td><%= link_to 'Show', laptime %></td>
+        <td><%= link_to 'Edit', edit_laptime_path(laptime) %></td>
+        <td><%= link_to 'Destroy', laptime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Laptime', new_laptime_path %>

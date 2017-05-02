@@ -1,0 +1,33 @@
+<div class="container info">
+  <h2 class=""><%= I18n.t "race.title" %></h2>
+  <div class="about">
+    <p style="white-space: pre-wrap;"><%= I18n.locale.to_s == 'is' ? @info.info_is.html_safe : @info.info_en.html_safe %></p>
+  </div>
+
+  <h2 class=""><%= I18n.t "groups.title" %></h2>
+  <div class="groups flex-child-row">
+    <% @groups.each do |group| %>
+    <div class="flex-item-1 flex-child-column flex-align-center group">
+      <h3><%= I18n.locale.to_s == 'is' ? group.name : group.name_en %></h3>
+      <p><i class="group-info"><%= I18n.locale.to_s == 'is' ? group.info_is : group.info_en %></i></p>
+      <p>
+        <b><%= group.participants %> <%= group.participants == '1' ? (I18n.t "groups.participant") : (I18n.t "groups.participants") %></b>
+      </p>
+      <p>
+        <%= group.bikes %> <%= I18n.t "groups.bikes" %>
+      </p>
+      <p>
+        <%= (I18n.t "groups.price", :prices => group.prices) %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+  <h2 class=""><%= I18n.t "race.rules" %></h2>
+  <div class="rules flex-child-column">
+    <% @rules.each do |rule| %>
+      <div class="container">
+        <h4><%= I18n.locale.to_s == 'is' ? rule.rule_is : rule.rule_en %></h4>
+      </div>
+    <% end %>
+  </div>
+</div>
