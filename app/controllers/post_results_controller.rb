@@ -50,6 +50,61 @@ class PostResultsController < ApplicationController
     return
   end
 
+  def deleteAll
+    #muna að breyta í 2007
+    Competitor.all.each do |competitor|
+      competitor.laptimes.delete_all
+      competitor.delete
+    end
+    ##
+    render json: {
+      status: 200,
+      message: 'All deleted'
+    }.to_json
+    return
+  end
+
+  def deleteOne
+    body = JSON.parse(request.body.read)
+
+    if (body['competitor'].present? && body['lapnumber'].present?)
+      competitor = Competitor.where(name: body['competitor']).take
+      if (competitor.nil?)
+        render json: {
+          status: 500,
+          message: 'Server error while finding competitor'
+        }.to_json
+        return
+      end
+
+      lap = Laptime.where(lap_number: body["lapnumber"], competitor: competitor).take
+
+      if (lap.nil?)
+        render json: {
+          status: 500,
+          message: 'Server error while finding lap'
+        }.to_json
+        return
+      end
+
+      lap.delete
+
+
+      render json: {
+        status: 200,
+        message: 'Lap deleted'
+      }.to_json
+      return
+
+    else
+      render json: {
+        status: 500,
+        message: 'Competitor not found'
+      }.to_json
+      return
+    end
+  end
+
   private
 
   def getCompetitor(team, group)
