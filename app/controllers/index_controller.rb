@@ -9,7 +9,7 @@ class IndexController < ApplicationController
 
   def results
     @groups = Group.all
-    @competitors = Competitor.where(year: 2016).order('laps DESC', :total_time)
+    @competitors = Competitor.where(year: 2017).order('laps DESC', :total_time)
   end
 
   def info
